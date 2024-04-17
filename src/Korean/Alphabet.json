@@ -1,0 +1,29 @@
+{
+    "characters": [
+      { "korean": "ㄱ", "english": "g/k" },
+      { "korean": "ㄴ", "english": "n" },
+      { "korean": "ㄷ", "english": "d/t" },
+      { "korean": "ㄹ", "english": "r/l" },
+      { "korean": "ㅁ", "english": "m" },
+      { "korean": "ㅂ", "english": "b/p" },
+      { "korean": "ㅅ", "english": "s" },
+      { "korean": "ㅇ", "english": "silent/ng" },
+      { "korean": "ㅈ", "english": "j/ch" },
+      { "korean": "ㅊ", "english": "ch" },
+      { "korean": "ㅋ", "english": "k" },
+      { "korean": "ㅌ", "english": "t" },
+      { "korean": "ㅍ", "english": "p" },
+      { "korean": "ㅎ", "english": "h" },
+      { "korean": "ㅏ", "english": "a" },
+      { "korean": "ㅑ", "english": "ya" },
+      { "korean": "ㅓ", "english": "eo" },
+      { "korean": "ㅕ", "english": "yeo" },
+      { "korean": "ㅗ", "english": "o" },
+      { "korean": "ㅛ", "english": "yo" },
+      { "korean": "ㅜ", "english": "u" },
+      { "korean": "ㅠ", "english": "yu" },
+      { "korean": "ㅡ", "english": "eu" },
+      { "korean": "ㅣ", "english": "i" }
+    ]
+  }
+  
