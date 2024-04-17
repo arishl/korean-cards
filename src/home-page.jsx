@@ -3,16 +3,14 @@ import { useState } from 'react';
 import { Button, ButtonGroup,  Text, Box } from '@chakra-ui/react';
 import './home-page.css'
 
+
+
+
+
 function HomePage() {
 
   const [options, setOptions] = useState(generateOptions());
-
-  const speak = (text, language) => {
-    const speech = new SpeechSynthesisUtterance(text);
-    speech.lang = language; // Set language to English
-    window.speechSynthesis.speak(speech);
-  };
-
+  
   function generateOptions() {
     const randomIndex = Math.floor(Math.random() * koreanalphabet.characters.length);
     const korean = koreanalphabet.characters[randomIndex].korean;
@@ -23,10 +21,16 @@ function HomePage() {
       .sort(() => 0.5 - Math.random())
       .slice(0, 3);
     const shuffledOptions = [correctEnglish, ...incorrectEnglish].sort(() => 0.5 - Math.random());
-    return { korean, options: shuffledOptions };
+    return { korean, correctEnglish, options: shuffledOptions };
   }
+  const speak = (text, language) => {
+    const speech = new SpeechSynthesisUtterance(text);
+    speech.lang = language; // Set language to English
+    window.speechSynthesis.speak(speech);
+  };
+
   function handleOptionClick(selectedOption) {
-    const isCorrect = selectedOption === options.options[0];
+    const isCorrect = selectedOption === options.correctEnglish;
     if (isCorrect) {
       setOptions(generateOptions());
       speak(options.korean, "ko-KR")
