@@ -5,7 +5,7 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        bg: '#2D3748', // Adjust the hex color code to your desired greyish-blue shade
+        bg: '#a4c9ec'//#2D3748', // Adjust the hex color code to your desired greyish-blue shade
       },
     },
   },
