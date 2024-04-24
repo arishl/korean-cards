@@ -1,12 +1,16 @@
-import koreanalphabet from './Korean/Alphabet.json'
-import koreansentences from './Korean/sentences-1.json'
-import koreanwords from './Korean/words.json'
+import level_0 from './Korean/level_0.json'
+import level_1 from './Korean/level_1.json'
+import level_2 from './Korean/level_2.json'
 import { useState } from 'react';
 import { Button, ButtonGroup,  Text, Box } from '@chakra-ui/react';
 import './home-page.css'
 import Cookies from 'js-cookie';
 
-
+const levelData = {
+  0: level_0,
+  1: level_1,
+  2: level_2,
+};
 
 
 
@@ -23,31 +27,19 @@ function HomePage() {
   
   
   function generateOptions() {
-    const randomIndex = Math.floor(Math.random() * koreanalphabet.characters.length);
-    let korean = "";
-    let correctEnglish = "";
-    let allEnglishOptions = "";
     if (xp >= 100){
       setLevel(level+1)
       Cookies.set("level", level);
       setXP(0);
       Cookies.set("xp",0);
     }
-    if (level  >= 2){
-      korean = koreansentences.sentences[randomIndex].korean;
-      correctEnglish = koreansentences.sentences[randomIndex].english;
-      allEnglishOptions = koreansentences.sentences.map(item => item.english);
-    }
-    else if (level >=1){
-      korean = koreanwords.words[randomIndex].korean;
-      correctEnglish = koreanwords.words[randomIndex].english;
-      allEnglishOptions = koreanwords.words.map(item => item.english);
-    }else{
-      korean = koreanalphabet.characters[randomIndex].korean;
-      correctEnglish = koreanalphabet.characters[randomIndex].english;
-      allEnglishOptions = koreanalphabet.characters.map(item => item.english);
-    }
-    
+    const randomIndex = Math.floor(Math.random() * levelData[level].items.length);
+    let korean = "";
+    let correctEnglish = "";
+    let allEnglishOptions = "";
+    korean = levelData[level].items[randomIndex].korean;
+    correctEnglish = levelData[level].items[randomIndex].english;
+    allEnglishOptions = levelData[level].items.map(item => item.english);
     const incorrectEnglish = allEnglishOptions
       .filter(option => option !== correctEnglish)
       .sort(() => 0.5 - Math.random())
@@ -127,13 +119,18 @@ function HomePage() {
         </ButtonGroup>
         </Box>
         </Box>
-        <Button pl = {500} pr = {500} _hover="#595454" bg="#595454"  mt = {3}>
-        <Box  alignItems="center"  justifyContent="center" display="flex" flexDirection="row">
-        <Text mr = {2} size = "small" fontSize="1xl" >Level:  {level}</Text>
-        <Text  ml = {2} size = "small" fontSize="1xl" >XP:  {xp}</Text>
-        </Box>
+        <Button pl = {50} pr = {50} bg = {level > 0 ? "green" : "red"}  mt = {3}>
+          Level 1
         </Button>
-        <Button pl = {600} pr = {600} _hover="#595454" bg="#595454"  mt = {3}></Button>
+        <Button pl = {50} pr = {50} bg = {level > 1 ? "green" : "red"}  mt = {3}>
+          Level 2
+        </Button>
+        <Button pl = {50} pr = {50} bg = {level > 2  ? "green" : "red"}  mt = {3}>
+          Level 3
+        </Button>
+        <Button pl = {50} pr = {50} bg = {level > 3 ? "green" : "red"}  mt = {3}>
+          Level 4
+        </Button>
     </Box>
   )
 }

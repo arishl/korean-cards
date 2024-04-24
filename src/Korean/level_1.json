@@ -1,0 +1,17 @@
+{
+  "items": [
+    {"korean": "나", "english": "I"},
+    {"korean": "나의", "english": "my"},
+    {"korean": "예", "english": "yes"},
+    {"korean": "아니오", "english": "no"},
+    {"korean": "이름", "english": "name"},
+    {"korean": "여기", "english": "here"},
+    {"korean": "처음", "english": "first time"},
+    {"korean": "많은", "english": "many"},
+    {"korean": "잘", "english": "well"},
+    {"korean": "자주", "english": "often"},
+    {"korean": "이다", "english": "to be"},
+    {"korean": "안녕하세요", "english": "hello"},
+    {"korean": "만나서 반가워요", "english": "nice to meet you"}
+  ]
+}
